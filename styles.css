@@ -1,0 +1,226 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  color:#6f6444;
+  line-height:1.8;
+}
+
+/* Shared */
+section{
+  padding:clamp(80px,10vw,140px) 24px;
+}
+
+h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:300;
+  letter-spacing:.22em;
+}
+
+strong{ font-weight:600; }
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:60vh;
+  display:grid;
+  place-items:center;
+}
+
+.hero__bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero__scrim{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.25);
+}
+
+.hero__content{
+  position:relative;
+  text-align:center;
+  color:#f5f0dc;
+}
+
+.hero__brand{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  text-transform:uppercase;
+}
+
+.hero__mynd{
+  font-size:clamp(56px,9vw,120px);
+  font-weight:300;
+  letter-spacing:.06em;
+  display:flex;
+  align-items:center;
+}
+
+.hero__the,
+.hero__method{
+  font-size:clamp(14px,1.8vw,18px);
+  letter-spacing:.18em;
+  opacity:.7;
+  display:flex;
+  align-items:center;
+}
+
+.hero__byline{
+  font-family: "Meow Script", cursive;
+  font-size:clamp(22px,4vw,44px);
+  align-items: flex-end;
+}
+
+/* INTRO */
+.intro{ background:#fbf8f2; text-align:center; }
+.intro__headline{ margin-bottom:64px; }
+.intro__text{ max-width:800px; margin:auto; }
+
+/* APPROACH */
+.approach{ background:#efeccf; }
+.approach__inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.oval{
+  border:1px solid rgba(111,100,68,.6);
+  border-radius:999px;
+  padding:24px;
+  text-align:center;
+}
+
+/* PHILOSOPHY */
+.philosophy{ background:#fdfaf4; text-align:center; }
+
+/* PILLARS */
+.pillars{
+  background:#6a6238;
+  color:#f5f0dc;
+  text-align:center;
+}
+
+.pillars__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:48px;
+}
+
+/* WORK */
+.work{ background:#efeccf; text-align:center; }
+.work__item{ margin-bottom:72px; }
+
+/* FEEDBACK */
+.feedback{ background:#fdfaf4; }
+.feedback__grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:64px;
+}
+
+/* CONTACT */
+.contact{
+  background:#6a6238;
+  color:#f5f0dc;
+  text-align:center;
+}
+
+.contact__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+  margin:64px 0;
+}
+
+.contact__signature{
+  font-family: "Meow Script", cursive;
+  font-size:clamp(32px,5vw,56px);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .approach__inner,
+  .pillars__grid,
+  .feedback__grid,
+  .contact__grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* NAV */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(8px);
+  background:rgba(253,250,244,.88);
+  border-bottom:1px solid rgba(111,100,68,.15);
+}
+
+.nav__inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.nav__logo{
+  font-family:"Cormorant Garamond",serif;
+  letter-spacing:.22em;
+  font-size:14px;
+  text-decoration:none;
+  color:#6f6444;
+}
+
+.nav__links{
+  list-style:none;
+  display:flex;
+  gap:24px;
+}
+
+.nav__links a{
+  text-decoration:none;
+  font-size:13px;
+  letter-spacing:.14em;
+  color:#6f6444;
+  position:relative;
+}
+
+.nav__links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:1px;
+  background:#6f6444;
+  transition:width .25s ease;
+}
+
+.nav__links a:hover::after{
+  width:100%;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .nav__links{
+    display:none;
+  }
+}
