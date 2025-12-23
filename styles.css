@@ -103,7 +103,10 @@ strong{ font-weight:600; }
 }
 
 /* APPROACH */
-.approach{ background:#efeccf; }
+.approach{
+  background:#efeccf;
+}
+
 .approach__inner{
   max-width:1200px;
   margin:auto;
@@ -121,7 +124,15 @@ strong{ font-weight:600; }
 }
 
 /* PHILOSOPHY */
-.philosophy{ background:#fdfaf4; text-align:center; }
+.philosophy {
+  background:#fdfaf4;
+  text-align:center;
+}
+
+.philosophy__inner p{
+  max-width:800px;
+  margin:auto;
+}
 
 /* PILLARS */
 .pillars{
@@ -143,11 +154,12 @@ strong{ font-weight:600; }
 
 .pillar img{
   width:100%;
+  max-width:360px;
   height:auto;
   display:block;
   aspect-ratio: 4 / 3;
   object-fit:cover;
-  margin-bottom: 1em;
+  margin: 0.5em auto;
 }
 
 /* WORK */
@@ -155,8 +167,16 @@ strong{ font-weight:600; }
 .work__item{ margin-bottom:72px; }
 
 /* FEEDBACK */
-.feedback{ background:#fdfaf4; }
-.feedback__grid{
+.feedback{
+  background:#fdfaf4;
+}
+
+.feedback__inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feedback__grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:64px;
@@ -172,14 +192,33 @@ strong{ font-weight:600; }
 .contact__grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:64px;
+  /* gap:1em;
   align-items:center;
-  margin:64px 0;
+  margin:3em 0; */
+
+  gap:clamp(32px, 6vw, 80px); /* 👈 single source of spacing */
+  align-items:center;
+
+  width:fit-content;         /* 👈 key */
+  margin:64px auto;
 }
 
 .contact__signature{
   font-family: "Meow Script", cursive;
   font-size:clamp(32px,5vw,56px);
+}
+
+.contact__grid img{
+  width:100%;
+  max-width:180px;
+  aspect-ratio: 3 / 4;
+  object-fit:cover;
+  display:block;
+  margin:0 auto;
+}
+
+.contact__details {
+  text-align: left;
 }
 
 /* Responsive */
